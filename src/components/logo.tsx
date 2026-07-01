@@ -24,8 +24,8 @@ export function Logo({ variant = "default", className = "" }: LogoProps) {
       <Image
         src="/logo.png"
         alt=""
-        width={476}
-        height={384}
+        width={693}
+        height={800}
         className="h-9 w-auto transition-transform duration-300 group-hover:-translate-y-0.5"
       />
       <span
