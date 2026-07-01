@@ -1,10 +1,10 @@
 import { Button } from "@/components/button";
 import { StatCounter } from "@/components/stat-counter";
-import { HeroStack } from "@/components/hero-stack";
+import { HeroLogo } from "@/components/hero-logo";
 import { heroStats } from "@/lib/data";
 
 /**
- * Hero: server shell (copy, buttons, stat row). The parallax portfolio stack
+ * Hero: server shell (copy, buttons, stat row). The particle-effect brand mark
  * and the count-up numbers are the only client pieces.
  */
 export function Hero() {
@@ -65,7 +65,7 @@ export function Hero() {
         </div>
 
         <div className="hidden lg:block">
-          <HeroStack />
+          <HeroLogo />
         </div>
       </div>
 

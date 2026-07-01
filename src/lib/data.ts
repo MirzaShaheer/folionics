@@ -212,11 +212,6 @@ export const projects: Project[] = [
   },
 ];
 
-/** Hero portfolio stack = Luxframes, Metroplex Customs, Thayvie. */
-export const heroStack: Project[] = ["Luxframes", "Metroplex Customs", "Thayvie"]
-  .map((name) => projects.find((p) => p.name === name))
-  .filter((p): p is Project => Boolean(p));
-
 // ---------------------------------------------------------------------------
 // Process
 // ---------------------------------------------------------------------------

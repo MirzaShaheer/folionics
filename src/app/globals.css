@@ -344,6 +344,20 @@
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
+/* Hero brand-mark float */
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+.hero-float {
+  animation: hero-float 6s ease-in-out infinite;
+}
+
 /* Scroll-cue bob */
 @keyframes cue-bob {
   0%,
