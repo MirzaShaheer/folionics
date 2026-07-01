@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Select } from "@/components/select";
 
 const projectTypes = [
   "New website",
@@ -45,10 +46,12 @@ export function ContactForm() {
 
   function update<K extends keyof typeof emptyForm>(field: K) {
     return (
-      event: React.ChangeEvent<
-        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-      >,
+      event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => setForm((prev) => ({ ...prev, [field]: event.target.value }));
+  }
+
+  function setField<K extends keyof typeof emptyForm>(field: K, value: string) {
+    setForm((prev) => ({ ...prev, [field]: value }));
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -102,48 +105,34 @@ export function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="projectType" className={labelClass}>
+          <span id="projectType-label" className={labelClass}>
             Project type
-          </label>
-          <select
+          </span>
+          <Select
             id="projectType"
             name="projectType"
-            required
+            labelledBy="projectType-label"
             value={form.projectType}
-            onChange={update("projectType")}
-            className={fieldClass}
-          >
-            <option value="" disabled>
-              Select one
-            </option>
-            {projectTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
+            onChange={(value) => setField("projectType", value)}
+            options={projectTypes}
+            placeholder="Select one"
+            required
+          />
         </div>
         <div>
-          <label htmlFor="budget" className={labelClass}>
+          <span id="budget-label" className={labelClass}>
             Budget
-          </label>
-          <select
+          </span>
+          <Select
             id="budget"
             name="budget"
-            required
+            labelledBy="budget-label"
             value={form.budget}
-            onChange={update("budget")}
-            className={fieldClass}
-          >
-            <option value="" disabled>
-              Select one
-            </option>
-            {budgets.map((budget) => (
-              <option key={budget} value={budget}>
-                {budget}
-              </option>
-            ))}
-          </select>
+            onChange={(value) => setField("budget", value)}
+            options={budgets}
+            placeholder="Select one"
+            required
+          />
         </div>
       </div>
 

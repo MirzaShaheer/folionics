@@ -312,6 +312,22 @@
   animation-play-state: paused;
 }
 
+/* Custom-select popup enter */
+@keyframes select-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.select-pop {
+  transform-origin: top center;
+  animation: select-pop 0.14s ease-out;
+}
+
 /* Status-pill pulse */
 @keyframes pulse-dot {
   0%,
