@@ -449,9 +449,6 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "Email", href: "mailto:hello@folionics.com" },
       { label: "WhatsApp", href: "#contact" },
-      { label: "LinkedIn", href: "#" },
-      { label: "Instagram", href: "#" },
-      { label: "Dribbble", href: "#" },
     ],
   },
 ];
