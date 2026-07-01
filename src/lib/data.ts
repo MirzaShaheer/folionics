@@ -21,7 +21,7 @@ export const studio = {
   oneLiner:
     "A lean web design and development studio in Dallas, building considered, fast websites for teams worldwide.",
   email: "hello@folionics.com",
-  phone: "+1 (000) 000-0000",
+  phone: "+1 (409) 269-4928",
   location: "Dallas, Texas",
   locationDetail: "Dallas, Texas · working worldwide",
   yearsBuilding: 8,
