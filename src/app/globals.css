@@ -238,6 +238,45 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
+  /* 3D coverflow slider (Work section) --------------------------------- */
+
+  /* Perspective viewport; clips the fanned side cards so they never cause
+     horizontal page scroll. */
+  .work-slider {
+    position: relative;
+    perspective: 1600px;
+    overflow: hidden;
+  }
+
+  /* Each slide is absolutely centered; JS sets the per-slide coverflow
+     transform (translateX / rotateY / scale) and opacity. */
+  .work-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.22, 0.7, 0.2, 1),
+      opacity 0.6s ease;
+    will-change: transform, opacity;
+  }
+
+  /* Inner card carries the pointer-tracked tilt on the centered slide. Short
+     transition so it follows the cursor without feeling laggy. */
+  .work-tilt {
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-out, box-shadow 0.3s ease;
+    will-change: transform;
+  }
+}
+
+/* Reduced motion: freeze the coverflow/tilt transitions (JS also disables the
+   pointer tilt), so the slider still works but nothing animates. */
+@media (prefers-reduced-motion: reduce) {
+  .work-slide,
+  .work-tilt {
+    transition: none !important;
+  }
 }
 
 /* ------------------------------------------------------------------ */
